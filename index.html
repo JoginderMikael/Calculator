@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js" defer></script>
 </head>
 <body>
-    <div id="calculator">
-        <input id="display" readonly>
-        <div id="keys">
-            <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('*')" class="operator-btn">*</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('/')" class="operator-btn">/</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="clearDisplay()" class="operator-btn">C</button>
-        </div>
+  <div id="calculator" role="application" aria-label="Scientific calculator">
+    <input id="display" aria-label="Display" readonly />
+
+    <div id="keys">
+      <!-- scientific functions -->
+      <button class="func" onclick="appendToDisplay('sin(')">sin</button>
+      <button class="func" onclick="appendToDisplay('cos(')">cos</button>
+      <button class="func" onclick="appendToDisplay('tan(')">tan</button>
+      <button class="func" onclick="appendToDisplay('ln(')">ln</button>
+
+      <button class="func" onclick="appendToDisplay('log(')">log</button>
+      <button class="func" onclick="appendToDisplay('sqrt(')">√</button>
+      <button class="func" onclick="appendToDisplay('^')">xʸ</button>
+      <button class="func" onclick="appendToDisplay('pi')">π</button>
+
+      <!-- numbers & basic ops -->
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('/')">÷</button>
+
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('*')">×</button>
+
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('-')">−</button>
+
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="appendToDisplay('(')">(</button>
+      <button onclick="appendToDisplay(')')">)</button>
+
+      <!-- control row -->
+      <button class="clear-btn" onclick="clearDisplay()">C</button>
+      <button class="back-btn" onclick="backspace()">⌫</button>
+      <button class="equals-btn" onclick="calculate()">=</button>
+      <button onclick="appendToDisplay('+')">+</button>
     </div>
+  </div>
 </body>
 </html>
